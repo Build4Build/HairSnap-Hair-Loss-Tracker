@@ -21,14 +21,6 @@ export interface UserSettings {
   notificationsEnabled: boolean;
 }
 
-export interface SuggestionType {
-  id: string;
-  title: string;
-  description: string;
-  category: 'medical' | 'lifestyle' | 'product' | 'treatment';
-  relevantScore: number; // 0-100, how relevant this suggestion is based on user's data
-}
-
 export enum ProgressTrend {
   IMPROVING = 'improving',
   STABLE = 'stable',

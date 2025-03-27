@@ -205,7 +205,7 @@ export const getUserSettings = (): Promise<UserSettings> => {
 
 export const updateUserSettings = (settings: UserSettings): Promise<void> => {
   return new Promise((resolve, reject) => {
-    db.transaction(tx => {
+    db.transaction((tx) => {
       tx.executeSql(
         `UPDATE settings SET 
           reminderFrequency = ?, 

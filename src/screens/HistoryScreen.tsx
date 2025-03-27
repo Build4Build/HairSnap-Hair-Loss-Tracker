@@ -33,6 +33,7 @@ const HistoryScreen = () => {
     try {
       setLoading(true);
       const allSnapshots = await getAllSnapshots();
+
       // Sort by timestamp (newest first)
       allSnapshots.sort((a, b) => b.timestamp - a.timestamp);
       setSnapshots(allSnapshots);
