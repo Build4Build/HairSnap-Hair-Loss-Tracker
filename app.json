@@ -1,0 +1,81 @@
+{
+  "expo": {
+    "name": "HairSnap",
+    "slug": "hairsnap-hair-loss-tracker",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#3498db"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hairsnap.app",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSCameraUsageDescription": "HairSnap needs access to your camera to take photos of your hair for tracking purposes.",
+        "NSPhotoLibraryUsageDescription": "HairSnap needs access to your photo library to save and access hair photos.",
+        "NSPhotoLibraryAddUsageDescription": "HairSnap needs permission to save photos to your photo library."
+      },
+      "appStoreUrl": "https://apps.apple.com/app/hairsnap/id123456789"
+    },
+    "android": {
+      "package": "com.hairsnap.app",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#3498db"
+      },
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.hairsnap.app"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#3498db"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "HairSnap needs access to your camera to take photos of your hair for tracking purposes."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "HairSnap needs access to your media library to save and access hair photos.",
+          "savePhotosPermission": "HairSnap needs permission to save photos to your media library."
+        }
+      ],
+      "expo-linear-gradient"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "your-eas-project-id"
+      }
+    },
+    "description": "HairSnap helps you track and monitor hair loss over time with easy photo comparisons and progress tracking.",
+    "primaryColor": "#3498db",
+    "privacy": "public",
+    "githubUrl": "https://github.com/yourusername/hairsnap-hair-loss-tracker",
+    "locales": {
+      "en": "./assets/locales/en.json"
+    }
+  }
+}
