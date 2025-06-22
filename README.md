@@ -11,15 +11,6 @@ HairSnap helps users track and monitor hair loss over time with easy photo compa
 - 📱 User-friendly interface with intuitive navigation
 - 🔒 Private and secure - all data stays on your device
 
-## Screenshots
-
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center">
-  <img src="./assets/screenshots/home.png" width="200" alt="Home Screen">
-  <img src="./assets/screenshots/camera.png" width="200" alt="Camera Screen">
-  <img src="./assets/screenshots/progress.png" width="200" alt="Progress Screen">
-  <img src="./assets/screenshots/history.png" width="200" alt="History Screen">
-</div>
-
 ## Development Setup
 
 1. Clone this repository
