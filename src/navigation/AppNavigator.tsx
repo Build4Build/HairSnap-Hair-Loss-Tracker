@@ -32,7 +32,7 @@ const TabNavigator = () => {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
           let iconName: keyof typeof Ionicons.glyphMap = 'home';
-          
+
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'Camera') {
@@ -42,7 +42,7 @@ const TabNavigator = () => {
           } else if (route.name === 'Settings') {
             iconName = focused ? 'settings' : 'settings-outline';
           }
-          
+
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: COLORS.primary,
@@ -50,24 +50,24 @@ const TabNavigator = () => {
         headerShown: false,
       })}
     >
-      <Tab.Screen 
-        name="Home" 
-        component={HomeScreen} 
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
         options={{ title: 'Dashboard' }}
       />
-      <Tab.Screen 
-        name="Camera" 
-        component={CameraScreen} 
+      <Tab.Screen
+        name="Camera"
+        component={CameraScreen}
         options={{ title: 'Capture' }}
       />
-      <Tab.Screen 
-        name="History" 
-        component={HistoryScreen} 
+      <Tab.Screen
+        name="History"
+        component={HistoryScreen}
         options={{ title: 'History' }}
       />
-      <Tab.Screen 
-        name="Settings" 
-        component={SettingsScreen} 
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
         options={{ title: 'Settings' }}
       />
     </Tab.Navigator>
@@ -85,28 +85,28 @@ const AppNavigator = () => {
     const initApp = async () => {
       try {
         await initDatabase();
-        
+
         // Get user settings
         const settings = await getUserSettings();
-        
+
         // Setup notifications based on settings
         await setupReminderNotifications(settings);
-        
+
         // Check if it's first launch (in a real app, you would check some flag)
         // For demo, we'll set it to false
         setIsFirstLaunch(false);
-        
+
         // Check if in store mode (can be triggered by a deep link or settings)
         // For demo, we'll set it to false
         setIsStoreMode(false);
-        
+
         setIsLoading(false);
       } catch (error) {
         console.error('Error initializing app:', error);
         setIsLoading(false);
       }
     };
-    
+
     initApp();
   }, []);
 
@@ -120,9 +120,9 @@ const AppNavigator = () => {
     return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen 
-            name="AppStoreAssets" 
-            component={AppStoreAssetsScreen} 
+          <Stack.Screen
+            name="AppStoreAssets"
+            component={AppStoreAssetsScreen}
             options={{ title: 'HairSnap - App Store Assets' }}
           />
         </Stack.Navigator>
@@ -141,46 +141,46 @@ const AppNavigator = () => {
         }}
       >
         {isFirstLaunch ? (
-          <Stack.Screen 
-            name="Onboarding" 
-            component={OnboardingScreen} 
+          <Stack.Screen
+            name="Onboarding"
+            component={OnboardingScreen}
             options={{ headerShown: false }}
           />
         ) : (
           <>
-            <Stack.Screen 
-              name="Main" 
-              component={TabNavigator} 
+            <Stack.Screen
+              name="Main"
+              component={TabNavigator}
               options={{ headerShown: false }}
             />
-            <Stack.Screen 
-              name="CapturePhoto" 
-              component={CameraScreen} 
+            <Stack.Screen
+              name="CapturePhoto"
+              component={CameraScreen}
               options={{ title: 'Take Photo' }}
             />
-            <Stack.Screen 
-              name="PhotoReview" 
-              component={PhotoReviewScreen} 
+            <Stack.Screen
+              name="PhotoReview"
+              component={PhotoReviewScreen}
               options={{ title: 'Review Photo' }}
             />
-            <Stack.Screen 
-              name="SnapshotDetail" 
-              component={SnapshotDetailScreen} 
+            <Stack.Screen
+              name="SnapshotDetail"
+              component={SnapshotDetailScreen}
               options={{ title: 'Snapshot Details' }}
             />
-            <Stack.Screen 
-              name="ProgressDetail" 
-              component={ProgressDetailScreen} 
+            <Stack.Screen
+              name="ProgressDetail"
+              component={ProgressDetailScreen}
               options={{ title: 'Progress Analysis' }}
             />
-            <Stack.Screen 
-              name="SettingsScreen" 
-              component={SettingsScreen} 
+            <Stack.Screen
+              name="SettingsScreen"
+              component={SettingsScreen}
               options={{ title: 'Settings' }}
             />
-            <Stack.Screen 
-              name="AppStoreAssets" 
-              component={AppStoreAssetsScreen} 
+            <Stack.Screen
+              name="AppStoreAssets"
+              component={AppStoreAssetsScreen}
               options={{ title: 'App Store Assets' }}
             />
           </>
